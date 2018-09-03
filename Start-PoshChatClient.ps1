@@ -342,7 +342,7 @@ $ConnectButton.Add_Click({
             $Endpoint = new-object System.Net.IPEndpoint ([ipaddress]::any,$SourcePort)
             $TcpClient = [Net.Sockets.TCPClient]$endpoint    
             Try {
-                $TcpClient.Connect($Server,15600)
+                $TcpClient.Connect($Server,8080)
                 $Global:ServerStream = $TcpClient.GetStream()
                 $data = [text.Encoding]::Ascii.GetBytes($Username)
                 $ServerStream.Write($data,0,$data.length)

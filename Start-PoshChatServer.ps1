@@ -182,12 +182,12 @@ $newRunspace.SessionStateProxy.setVariable("EnableLogging", $EnableLogging)
 $Global:newPowerShell = [PowerShell]::Create()
 $newPowerShell.Runspace = $newRunspace
 $sb = {
- $Listener['listener'] = [System.Net.Sockets.TcpListener]15600
+ $Listener['listener'] = [System.Net.Sockets.TcpListener]8080
  $Listener['listener'].Start()
- [console]::WriteLine("{0} >> Server Started on port 15600" -f (Get-Date).ToString())
+ [console]::WriteLine("{0} >> Server Started on port 8080" -f (Get-Date).ToString())
  If ($EnableLogging) {
     Write-Verbose ('Logging to file')
-    Out-File -Inputobject ("{0} >> Server Started on port 15600" -f (Get-Date).ToString()) -FilePath $EnableLogging
+    Out-File -Inputobject ("{0} >> Server Started on port 8080" -f (Get-Date).ToString()) -FilePath $EnableLogging
 } 
  while($true) {
     [byte[]]$byte = New-Object byte[] 5KB
